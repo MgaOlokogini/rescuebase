@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+@theme {
+  --font-itim: 'Itim', cursive;
+}
+
 :root {
   color-scheme: light;
   color: #0f172a;

@@ -1,0 +1,112 @@
+
+
+
+/* 1. Full-width outer layout bar matching the amber background */
+.headerWrapper {
+  width: 100%;
+  background-color: #FCBF49; /* Warm amber theme */
+  padding: 1rem 1.5rem;      /* px-6 py-4 equivalent */
+  color: #D62828;            /* Muted dark brown text */
+  font-family: var(--font-itim), sans-serif; /* Applies Itim to everything inside */
+  margin-top: 0;
+  display: flow-root;        /* Prevents margin collapse gaps on top */
+}
+
+/* 2. Inner constraint container aligning elements to the 5xl grid width */
+.container {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  max-width: 64rem;          /* max-w-5xl alignment */
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 3. Logo text & Icon branding style */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;          /* text-2xl */
+  font-weight: 700;           /* font-bold */
+  color: #D62828;             /* Deep red accent branding color */
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+/* 4. Center navigation link list layout */
+.nav {
+  display: none;             /* Hidden on mobile, flex on desktop */
+  align-items: center;
+  gap: 1.5rem;               /* gap-6 */
+  font-size: 0.875rem;       /* text-sm */
+  font-weight: 600;           /* font-semibold */
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;           /* md:flex wrapper hook */
+  }
+}
+
+.navLink {
+  color: #D62828;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #451a03;
+  text-decoration: underline;
+}
+
+/* 5. Right hand side utility actions container */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;               /* gap-3 */
+}
+
+/* Base Pill Button Layout Rules */
+.btn {
+  border-radius: 9999px;     /* rounded-full pill shape */
+  padding: 0.5rem 1.25rem;    /* px-5 py-2 */
+  font-size: 0.875rem;       /* text-sm */
+  font-weight: 700;           /* font-bold */
+  text-decoration: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Specific styling for the Log In button */
+.btnLogin {
+  background-color: #FFF7CB;  /* Light cream background */
+  color: #FB8500;             /* Amber-700 text accent */
+  transition: background-color 0.2s ease;
+}
+
+.btnLogin:hover {
+  background-color: #FFEFA3;  /* Slightly darker cream hover states */
+}
+
+/* Specific styling for the Get Started button */
+.btnGetStarted {
+  background-color: #5A1B00;  /* High contrast dark chocolate brown */
+  color: #FCBF49;             /* Warm amber font color */
+  transition: background-color 0.2s ease;
+}
+
+.btnGetStarted:hover {
+  background-color: #361402;  /* Deep dark rich hover background shift */
+  transition: background-color 0.2s ease;
+}
