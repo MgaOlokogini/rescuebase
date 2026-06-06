@@ -1,8 +1,14 @@
 import Link from "next/link";
+import Header from "@/components/shared/Header";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-100 px-6 py-10 text-slate-900">
+    <main className="min-h-screen bg-slate-100 text-slate-900 flex flex-col gap-6">
+      
+      {/*Landing Page Header here */}
+      <Header role={null} />
+
+      {/* 2. Your Main Card Content */}
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 rounded-3xl border border-slate-200 bg-white/90 p-10 shadow-xl shadow-slate-200/40">
         <section className="space-y-4">
           <p className="text-sm uppercase tracking-[0.3em] text-slate-500">RescueBase</p>
