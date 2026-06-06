@@ -1,38 +1,160 @@
 import Link from "next/link";
+import Image from 'next/image';
 import Header from "@/components/shared/Header";
+import PetCard from "@/components/ui/PetCard";
+import ProcessCard from "@/components/ui/ProcessCard";
+import styles from "@/styles/Landing.module.css";
+
 
 export default function Home() {
+
+//database preparation for stats section (currently hardcoded for demo purposes)
+  const statsData = [
+    { id: 1, value: "2,847", label: "Pets Adopted" },
+    { id: 2, value: "94%", label: "Match Rate" },
+    { id: 3, value: "12", label: "Partner Shelters" },
+    { id: 4, value: "4.9", label: "Adopter Rating" }
+  ];
+
+
   return (
-    <main className="min-h-screen bg-slate-100 text-slate-900 flex flex-col gap-6">
+    <main className={styles.mainWrapper}>
       
-      {/*Landing Page Header here */}
+{/*Landing Page Header here */}
       <Header role={null} />
 
-      {/* 2. Your Main Card Content */}
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 rounded-3xl border border-slate-200 bg-white/90 p-10 shadow-xl shadow-slate-200/40">
-        <section className="space-y-4">
-          <p className="text-sm uppercase tracking-[0.3em] text-slate-500">RescueBase</p>
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-950">Shelter management built for adopters, staff, and managers.</h1>
-          <p className="max-w-3xl text-lg leading-8 text-slate-600">
-            Organize animal profiles, manage foster workflows, and monitor shelter operations from one modular Next.js App Router experience.
+{/* 1. Title section Container */}
+      <section className={styles.heroSection}>
+      
+        <div className={styles.heroContent}>    
+      {/* Main Title */}
+          <h1 className={`${styles.mainTitle} ${styles.heroTitle}`}>
+            Find Your <br />
+            Perfect <span className={styles.highlightText}>Match</span>
+          </h1>
+          
+      {/* Subtitle */}
+          <p className={`${styles.subTitle} ${styles.heroSubtitle}`}>
+            Helping every rescued pet find a loving family faster.
           </p>
-        </section>
 
-        <section className="grid gap-4 md:grid-cols-3">
-          <Link href="/dashboard" className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left transition hover:border-slate-300 hover:bg-slate-100">
-            <h2 className="text-xl font-semibold text-slate-900">Adopter Portal</h2>
-            <p className="mt-2 text-slate-600">Browse pets, take the match quiz, and request a foster or adoption.</p>
+      {/* Action Button */}
+          <Link href="/browse" className={styles.heroButton}>
+            <span>Find my Match</span>
+            <Image 
+              src="/icons/heart.svg" 
+              alt="" 
+              width={28}   /* Increased size since it includes its own circle now */
+              height={28} 
+              className={styles.heroButtonIcon}
+            />
           </Link>
-          <Link href="/staff-home" className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left transition hover:border-slate-300 hover:bg-slate-100">
-            <h2 className="text-xl font-semibold text-slate-900">Staff Hub</h2>
-            <p className="mt-2 text-slate-600">Quick intake forms, passport history, and pipeline tools for operations teams.</p>
+        </div>
+      </section> 
+
+
+{/* Rescues Showcase Section */}
+      <section className={styles.rescuesSection}>
+        
+    {/* Section Typography Headers */}
+        <div className={styles.sectionHeader}>
+          <h2 className={`${styles.mainTitle} ${styles.showcaseTitle}`}>Meet some of our rescues</h2>
+          <p className={`${styles.subTitle} ${styles.showcaseSubtitle}`}>Every one of them is waiting for you.</p>
+        </div>
+
+    {/* "See All Pets" text arrow locator */}
+        <div className={styles.seeAllWrapper}>
+          <Link href="/browse" className={styles.seeAllLink}>
+            <span>See All Pets</span>
+            <span className={styles.arrowIcon}>→</span>
           </Link>
-          <Link href="/analytics" className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left transition hover:border-slate-300 hover:bg-slate-100">
-            <h2 className="text-xl font-semibold text-slate-900">Manager Dashboard</h2>
-            <p className="mt-2 text-slate-600">Review shelter analytics, LOS alerts, and high-risk adoption watchlists.</p>
-          </Link>
-        </section>
+        </div>
+
+    {/* Three-Column Animal Cards Display Grid */}
+        <div className={styles.cardsGrid}>
+          <PetCard name="Max" breed="Shih Tzu" age="4 years" badgeText="Kid Friendly" />
+          <PetCard name="Blacky" breed="Aspin" age="1 year" badgeText="Kid Friendly" />
+          <PetCard name="Chichay" breed="Puspin" age="4 years" badgeText="Kid Friendly" />
+        </div>
+
+{/* Bottom Action Footer Segment */}
+        <div className={styles.ctaContainer}>
+          <p className={styles.ctaPrompt}>Sign in to see all available pets and start your application</p>
+          
+          <div className={styles.actionButtonsGroup}>
+            <Link href="/register" className={`${styles.ctaButtonBase} ${styles.adoptButton}`}>
+              <span>Adopt</span>
+              <Image src="/icons/Adopt.svg" alt="" width={42} height={42} />
+            </Link>
+            <Link href="/donate" className={`${styles.ctaButtonBase} ${styles.donateButton}`}>
+              <span>Donate</span>
+              <Image src="/icons/Donate.svg" alt="" width={42} height={42} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+{/* Dynamic Stats Banner Section (NEW) */}
+      <section className={styles.statsSection}>
+        {statsData.map((stat) => (
+          <div key={stat.id} className={styles.statItem}>
+            <span className={styles.statNumber}>{stat.value}</span>
+            <p className={styles.statLabel}>{stat.label}</p>
+          </div>
+        ))}
+      </section>
+
+{/* Adoption Steps Section */}
+      <section className={styles.stepsSection}>
+        <h2 className={`${styles.mainTitle} ${styles.stepsTitle}`}>Adoption in three steps</h2>
+        <p className={`${styles.subTitle} ${styles.stepsSubtitle}`}>We've made finding your forever pet as joyful as the moment you meet them.</p>
+        
+        <div className={styles.stepsGrid}>
+          {/* Rendered as Medium Size */}
+          <ProcessCard 
+            size="md"
+            iconSrc="/icons/StepQuiz.svg"
+            title="Take the Match Quiz"
+            description="Answer a few fun questions about your lifestyle. Our AI finds pets that truly fit your world."
+          />
+          
+          <div className={styles.stepArrow}>
+            <Image src="/icons/StepArrow.svg" alt="" width={40} height={24} />
+          </div>
+
+          <ProcessCard 
+            size="md"
+            iconSrc="/icons/StepMatches.svg"
+            title="Meet Your Matches"
+            description="Browse your personalized pet gallery with rich profiles, photos, and personality breakdowns."
+          />
+          
+          <div className={styles.stepArrow}>
+            <Image src="/icons/StepArrow.svg" alt="" width={40} height={24} />
+          </div>
+
+          <ProcessCard 
+            size="md"
+            iconSrc="/icons/StepHome.svg"
+            title="Apply & Bring Them Home"
+            description="Submit your application in minutes. Our staff guides you through every step of the journey."
+          />
+        </div>
+      </section>
+
+{/* Decorative background paw trail overlay */}
+      <div className={styles.pawContainer}>
+        
+        <div className={styles.pawOverlay}>
+          <Image src="/images/pawTrail.png" alt="" fill style={{ objectFit: 'cover' }} priority/>
+        </div>
+
+        <div className={styles.pawOverlayFlipped}>
+          <Image src="/images/pawTrail.png" alt="" fill style={{ objectFit: 'cover' }} priority />
+        </div>
+
       </div>
+
     </main>
   );
 }
