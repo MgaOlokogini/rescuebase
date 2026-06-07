@@ -22,6 +22,8 @@ export const metadata = {
   description: "Modern shelter management for animal adoption, staff workflows, and manager dashboards.",
 };
 
+// app/layout.js
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={itim.variable}> {/* makes --font-itim available everywhere */}

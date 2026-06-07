@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Header from "@/components/shared/Header";
 import PetCard from "@/components/ui/PetCard";
 import ProcessCard from "@/components/ui/ProcessCard";
+import PlatformFeatures from '@/components/ui/PlatformFeatures';
 import styles from "@/styles/Landing.module.css";
 
 
@@ -42,7 +43,7 @@ export default function Home() {
           <Link href="/browse" className={styles.heroButton}>
             <span>Find my Match</span>
             <Image 
-              src="/icons/heart.svg" 
+              src="/icons/light heart.svg" 
               alt="" 
               width={28}   /* Increased size since it includes its own circle now */
               height={28} 
@@ -113,34 +114,37 @@ export default function Home() {
           {/* Rendered as Medium Size */}
           <ProcessCard 
             size="md"
-            iconSrc="/icons/StepQuiz.svg"
+            iconSrc="/icons/paw search.svg"
             title="Take the Match Quiz"
             description="Answer a few fun questions about your lifestyle. Our AI finds pets that truly fit your world."
           />
           
           <div className={styles.stepArrow}>
-            <Image src="/icons/StepArrow.svg" alt="" width={40} height={24} />
+            <Image src="/icons/StepArrow.svg" alt="" width={50} height={34} />
           </div>
 
           <ProcessCard 
             size="md"
-            iconSrc="/icons/StepMatches.svg"
+            iconSrc="/icons/red heart.svg"
             title="Meet Your Matches"
             description="Browse your personalized pet gallery with rich profiles, photos, and personality breakdowns."
           />
           
           <div className={styles.stepArrow}>
-            <Image src="/icons/StepArrow.svg" alt="" width={40} height={24} />
+            <Image src="/icons/StepArrow.svg" alt="" width={50} height={34} />
           </div>
 
           <ProcessCard 
             size="md"
-            iconSrc="/icons/StepHome.svg"
+            iconSrc="/icons/home.svg"
             title="Apply & Bring Them Home"
             description="Submit your application in minutes. Our staff guides you through every step of the journey."
           />
         </div>
       </section>
+
+{/* Render it as a single, self-contained tag */}
+      <PlatformFeatures />
 
 {/* Decorative background paw trail overlay */}
       <div className={styles.pawContainer}>
