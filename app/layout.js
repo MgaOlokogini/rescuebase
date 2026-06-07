@@ -26,11 +26,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={itim.variable}>
-      <head />
-      <body>
-        {children}
-      </body>
+    <html lang="en" className={itim.variable}> {/* makes --font-itim available everywhere */}
+    <head />
+    <body>{children}</body>
     </html>
   );
 }
