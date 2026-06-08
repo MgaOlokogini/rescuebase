@@ -1,12 +1,11 @@
 // components/ui/ProcessCard.js
 import Image from 'next/image';
-import styles from '@/styles/Landing.module.css';
-
+import styles from '@/styles/Landing/Steps.module.css';
 export default function ProcessCard({ 
   title, 
   description, 
   iconSrc, 
-  size = "md" // Default size fallback if not explicitly passed
+  size = "md" 
 }) {
   
   // Dynamic size configuration map

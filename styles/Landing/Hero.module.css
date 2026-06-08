@@ -1,0 +1,116 @@
+/* General Main Title Styles (Itim Font, Chocolate, Scalable) */
+.mainTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04; /* Dark chocolate brown */
+  line-height: 1.1;
+  user-select: none;
+}
+
+/* General Subtitle Styles (Karma Font, Elegant Brick Red) */
+.subTitle {
+  font-family: var(--font-karma), serif; /* Cleanly updated to Karma */
+  color: #AA2020; /* Elegant brick red accent */
+  letter-spacing: 0.025em;
+}
+
+/* Playful Underline Accent for Titles */
+.highlightText {
+  color: #AA2020;
+  position: relative;
+  display: inline-block;
+}
+
+.highlightText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background-color: #431a04;
+  border-radius: 9999px;
+}
+
+
+/* ==========================================================================
+   HERO SECTION LAYOUT
+   ========================================================================== */
+
+
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  overflow: visible;
+
+  background-image: url('/images/topCurve.png');
+  background-size: 100% 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Custom layout spacing/sizes for the Hero Title */
+.heroTitle {
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+/* Custom layout spacing/sizes for the Hero Subtitle */
+.heroSubtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   4. HERO COMPONENT INTERNALS
+   ========================================================================== */
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #5A1B00;
+  color: #fff7cb; 
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.125rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  font-family: var(--font-itim), sans-serif;
+}
+
+.heroButton:hover {
+  background-color: #2d1102;
+  transform: translateY(-2px);
+}
+
+.heroButtonIcon {
+  display: inline-block;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.heroButton:hover .heroButtonIcon {
+  transform: rotate(15deg);
+}

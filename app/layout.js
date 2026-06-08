@@ -1,5 +1,6 @@
 import { Itim, Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
+import '../styles/Landing/Landing.css';
 
 const itim = Itim({
   weight: "400", 

@@ -1,4 +1,4 @@
-import styles from '../../styles/Landing.module.css';
+import styles from '@/styles/Landing/Features.module.css';
 import FeatureCard from './FeatureCard'; // Adjust path if needed depending on your folder layout
 
 export default function PlatformFeatures() {

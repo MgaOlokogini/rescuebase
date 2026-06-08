@@ -1,7 +1,6 @@
 // components/PetCard.js
 import Image from 'next/image';
-import styles from '@/styles/Landing.module.css'; // Points right to your styling setup
-
+import styles from '@/styles/Landing/Rescues.module.css';
 export default function PetCard({ name, breed, age, badgeText }) {
   return (
     <div className={styles.petCard}>
