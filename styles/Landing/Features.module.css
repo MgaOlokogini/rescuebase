@@ -1,0 +1,124 @@
+
+
+/* ==========================================================================
+   FEATURES SHOWCASE SECTION
+   ========================================================================== */
+
+/* The main section wrapper background canvas */
+.featuresSection {
+  position: relative;
+  width: 100%;
+  padding: 8rem 2rem;        /* Generous top/bottom padding to give it breathing room */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Header Title */
+.featuresMainTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04; /* Deep chocolate brown */
+  font-size: 3.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Section Subtitle Description */
+.featuresSubtitle {
+  font-family: var(--font-karma), serif;
+  color: #A34828; /* Soft terracotta red/accent color */
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 0 4.5rem 0;
+  max-width: 48rem;
+  line-height: 1.4;
+}
+
+/* The 2x2 Grid Layout Controller */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* Creates a clean 2-column layout */
+  gap: 2rem; /* Exact spatial gap separating the cards */
+  width: 100%;
+  max-width: 68rem; /* Keeps the cards centered nicely in the middle of the viewport */
+}
+
+/* Individual Feature Card Container */
+.featureCard {
+  background-color: #F9F5EB;
+  border: 1px solid #431a04; /* Soft, low-contrast border matching the design mockup */
+  border-radius: 1.5rem;      /* Beautiful rounded corners */
+  padding: 2.25rem 2rem;
+  display: flex;
+  align-items: flex-start;    /* Keeps icons perfectly level with the first line of text */
+  gap: 1.5rem;
+  /* Smooth transition for when a user hovers over the card */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle Interactive Hover Effect */
+.featureCard:hover {
+  transform: translateY(-2px); /* Lifts the card slightly up */
+  box-shadow: 0 8px 24px rgba(67, 26, 4, 0.05); /* Drops a soft chocolate-tinted shadow */
+}
+
+/* Icon Container Constraints */
+.featureIconWrapper {
+  flex-shrink: 0; /* Prevents the Next.js image from squishing or shrinking */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Typography Card Text Wrapper */
+.featureTextWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between title and description body */
+}
+
+/* Individual Card Heading */
+.featureCardTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Individual Card Body Paragraph */
+.featureCardDescription {
+  font-family: var(--font-karma), serif;
+  color: #431a04;
+  font-size: 0.95rem;
+  line-height: 1.5; /* Gives lines room to breathe */
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+@media (max-width: 960px) {
+  .featuresGrid {
+    grid-template-columns: 1fr; /* Snaps the 2x2 grid down into 1 single stacked column */
+    max-width: 36rem;
+  }
+  
+  .featuresSection {
+    padding: 5rem 1.5rem;
+  }
+  
+  .featuresMainTitle {
+    font-size: 2.5rem;
+  }
+  
+  .featuresSubtitle {
+    font-size: 1.1rem;
+    margin: 0 0 3rem 0;
+  }
+  
+  .featureCard {
+    padding: 1.75rem 1.5rem;
+  }
+}

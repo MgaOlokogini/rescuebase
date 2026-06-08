@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import styles from '../../styles/Landing.module.css';
-
+import styles from '@/styles/Landing/Features.module.css';
 export default function FeatureCard({ title, description, icon }) {
   return (
     <div className={styles.featureCard}>

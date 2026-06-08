@@ -1,0 +1,55 @@
+
+
+/* ==========================================================================
+   DYNAMIC STATS BANNER SECTION
+   ========================================================================= */
+
+.statsSection {
+  width: 100%;
+  background-color: #FCBF49; /* Vivid brand yellow banner fill */
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.statNumber {
+  font-family: var(--font-itim), sans-serif;
+  color: #5A1B00; /* Dark chocolate brand brown */
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-family: var(--font-karma), serif;
+  color: #5A1B00;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive breakdowns for tablet and mobile devices */
+@media (max-width: 900px) {
+  .statsSection {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2x2 layout */
+    gap: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsSection {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Clean single file stack */
+  }
+}

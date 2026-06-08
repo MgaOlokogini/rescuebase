@@ -1,0 +1,142 @@
+/* General Main Title Styles (Itim Font, Chocolate, Scalable) */
+.mainTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04; /* Dark chocolate brown */
+  line-height: 1.1;
+  user-select: none;
+}
+
+/* General Subtitle Styles (Karma Font, Elegant Brick Red) */
+.subTitle {
+  font-family: var(--font-karma), serif; /* Cleanly updated to Karma */
+  color: #AA2020; /* Elegant brick red accent */
+  letter-spacing: 0.025em;
+}
+
+/* Playful Underline Accent for Titles */
+.highlightText {
+  color: #AA2020;
+  position: relative;
+  display: inline-block;
+}
+
+.highlightText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background-color: #431a04;
+  border-radius: 9999px;
+}
+
+/* ==========================================================================
+   ADOPTION STEPS PROCESS SECTION (image_ff7883.png)
+   ========================================================================== */
+
+.stepsSection {
+  position: relative;
+  width: 100%;
+  padding: 10rem 2rem 6rem 2rem;
+  background-color: #EAE2B7; /* Back to your solid canvas background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepsTitle {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stepsSubtitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0.75rem 0 3.5rem 0;
+  max-width: 36rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Horizontal line-up for the cards and tracking arrows */
+.stepsGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 68rem;
+  z-index: 2; /* Sits on top of the background paws */
+}
+
+.processCard {
+  background-color: #FDFBF7;
+  border: 1px solid #431a04;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  transition: transform 0.2s ease;
+}
+
+.processCard:hover {
+  transform: translateY(-4px); /* Playful micro-interaction */
+}
+
+/* Small Variant */
+.cardSm {
+  padding: 1.5rem 1rem;
+  min-height: 14rem;
+}
+.cardSm .stepCardTitle { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.cardSm .stepCardDescription { font-size: 0.85rem; }
+
+/* Medium Variant */
+.cardMd {
+  padding: 2.5rem 1.5rem;
+  min-height: 20rem;
+}
+.cardMd .stepCardTitle { font-size: 1.5rem; margin-bottom: 1rem; }
+.cardMd .stepCardDescription { font-size: 0.95rem; }
+
+/* Large Variant  */
+.cardLg {
+  padding: 4rem 2.5rem;
+  min-height: 26rem;
+  border-width: 2px; /* Thick bold border */
+}
+.cardLg .stepCardTitle { font-size: 2rem; margin-bottom: 1.25rem; }
+.cardLg .stepCardDescription { font-size: 1.1rem; }
+
+.stepIconWrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepCardTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stepCardDescription {
+  font-family: var(--font-karma), serif;
+  color: #431a04;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Connecting Arrow Assets styling */
+.stepArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}

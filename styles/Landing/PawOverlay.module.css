@@ -1,0 +1,57 @@
+/* ==========================================================================
+    PAW OVERLAY LAYERS
+   ========================================================================== */
+.pawContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden; /* Cuts off the paw edges so the browser doesn't see them */
+  z-index: 0;
+}
+
+   .pawOverlay {
+  position: absolute;
+  right: 0;
+  top: 45vh;
+  width: 120%;
+  height: 70vh;
+  opacity: 0.75;
+  z-index: 0;
+  pointer-events: none; 
+  transform: rotate(20.84deg); 
+  transform-origin: bottom center;
+}
+
+.pawOverlayFlipped {
+  position: absolute;
+  left: 0; 
+  top: 230vh; 
+  width: 120%;
+  height: 70vh;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+  
+  /* scaleX(-1) mirrors the image horizontally, rotate swings its angle */
+  transform: rotateY(180deg) rotate(15deg); 
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+/* Responsive collapse for smaller viewport screens */
+@media (max-width: 900px) {
+  .stepsGrid {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .stepArrow {
+    transform: rotate(90deg); /* Rotates the arrows pointing downward on mobile */
+    margin: -0.5rem 0;
+  }
+  .pawOverlayFlipped {
+    display: none; /* Keeps mobile views clean and uncluttered */
+  }
+}

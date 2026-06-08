@@ -1,0 +1,74 @@
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal side-scrolling */
+  background-color: #EAE2B7; /* Keeps your background color consistent */
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding doesn't accidentally push elements out */
+}
+
+.headerContainer { /* Use whatever your main header class name is */
+  width: 100vw;       /* Forces it to span the full width of the viewport browser window */
+  position: relative; /* Or fixed/absolute if you want it to float on top of your hero text */
+  margin: 0;
+  padding-left: 2rem; /* Give inner contents breathing room without shrinking the bar itself */
+  padding-right: 2rem;
+}
+
+/* ==========================================================================
+   REUSABLE TYPOGRAPHY & DESIGN UTILITIES
+   ========================================================================== */
+
+/* General Main Title Styles (Itim Font, Chocolate, Scalable) */
+.mainTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04; /* Dark chocolate brown */
+  line-height: 1.1;
+  user-select: none;
+}
+
+/* General Subtitle Styles (Karma Font, Elegant Brick Red) */
+.subTitle {
+  font-family: var(--font-karma), serif; /* Cleanly updated to Karma */
+  color: #AA2020; /* Elegant brick red accent */
+  letter-spacing: 0.025em;
+}
+
+/* Playful Underline Accent for Titles */
+.highlightText {
+  color: #AA2020;
+  position: relative;
+  display: inline-block;
+}
+
+.highlightText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background-color: #431a04;
+  border-radius: 9999px;
+}
+
+
+/* ==========================================================================
+    RESPONSIVE BREAKPOINTS (Global Typography Scale Controls)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+  .pawOverlay {
+    display: none;
+  }
+  .pawOverlayFlipped {
+    opacity: 0.2; 
+    width: 130%;  
+  }
+}
