@@ -5,6 +5,7 @@ import HeroSection from '@/components/ui/landing/HeroSection';
 import RescuesShowcase from '@/components/ui/landing/RescuesShowcase';
 import StatsBanner from '@/components/ui/landing/StatsBanner';
 import AdoptionSteps from '@/components/ui/landing/AdoptionSteps';
+import CallToActionBanner from '@/components/ui/landing/CallToActionBanner';
 
 // 👇 We only need the Paw background module styles directly on this main orchestrator
 import pawStyles from "@/styles/Landing/PawOverlay.module.css";
@@ -20,6 +21,7 @@ export default function Home() {
       <StatsBanner />
       <AdoptionSteps />
       <PlatformFeatures />
+      <CallToActionBanner />
 
       {/* Background Decorative Graphic Overlays */}
       <div className={pawStyles.pawContainer}>

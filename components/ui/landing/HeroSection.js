@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from 'next/image';
-import Header from "@/components/shared/Header";
 import styles from "@/styles/Landing/Hero.module.css";
 
 export default function HeroSection() {
