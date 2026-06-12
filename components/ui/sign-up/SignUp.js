@@ -1,14 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "@/styles/Sign-In/SignIn.module.css";
+import styles from "@/styles/Sign-up/SignUp.module.css";
 import Header from "@/components/shared/Header";
 
-export default function LogInSection() {
+export default function SignUpSection() {
   return (
     <div className={styles.authPageContainer}>
       
-      {/* Reusable Header with Action Buttons Hidden */}
       <Header showButtons={false} />
 
       {/* 🔲 Main Dynamic Split-Panel Grid */}
@@ -17,7 +16,7 @@ export default function LogInSection() {
         {/* Left Panel: Pet Graphics Side */}
         <div className={styles.leftVisualSide}>
           <Image 
-            src="/images/auth-pets2.jpg" 
+            src="/images/auth-pets.jpg" 
             alt="Happy golden retriever dog and British shorthair cat sitting together"
             fill
             priority
@@ -38,12 +37,12 @@ export default function LogInSection() {
 
           {/* Core Form Element Groupings */}
           <div className={styles.formContentBox}>
-            <h1 className={`globalMainTitle ${styles.formTitle}`}>Welcome Back</h1>
+            <h1 className={styles.formTitle}>Create Account</h1>
 
             {/* Google OAuth Provider Button */}
             <button type="button" className={styles.googleAuthButton}>
               <img src="/icons/google.svg" alt="" className={styles.providerIcon} />
-              <span>Sign in with Google</span>
+              <span>Sign up with Google</span>
             </button>
 
             <div className={styles.dividerContainer}>
@@ -52,8 +51,10 @@ export default function LogInSection() {
 
             {/* Credential Inputs Section */}
             <form className={styles.credentialsForm} onSubmit={(e) => e.preventDefault()}>
-              
-              {/* 2. 🪓 Removed 'Full Name' field here for regular Login flow */}
+              <div className={styles.inputWrapper}>
+                <input type="text" id="fullName" placeholder="Full Name" required className={styles.materialInput} />
+              </div>
+
               <div className={styles.inputWrapper}>
                 <input type="email" id="email" placeholder="Email Address" required className={styles.materialInput} />
               </div>
@@ -70,15 +71,13 @@ export default function LogInSection() {
                 </button>
               </div>
 
-              {/* 3. 🎯 Primary action text updated */}
               <button type="submit" className={`globalMainTitle ${styles.submitActionButton}`}>
-                Log In
+                Create Account
               </button>
             </form>
             
-            {/* 4. 🔄 Inverted redirect parameters */}
             <p className={`globalSubTitle ${styles.footerRedirectPrompt}`}>
-              Don't have an account? <Link href="/register" className={styles.redirectLink}>Sign Up</Link>
+              Already have an account? <Link href="/login" className={styles.redirectLink}>Sign In</Link>
             </p>
           </div>
 

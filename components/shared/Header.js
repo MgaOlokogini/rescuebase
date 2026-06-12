@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Header.module.css';
 
-export default function Header() {
+export default function Header({ showButtons = true }) {
   return (
     <header className={styles.headerWrapper}>
       <div className={styles.container}>
@@ -34,16 +34,18 @@ export default function Header() {
         </nav>
 
         {/* Action Buttons*/}
-        <div className={styles.actions}>
-          <Link href="/login" className={`${styles.btn} ${styles.btnLogin}`}>
-            <Image src="/icons/yellowPaw.svg" alt="" width={16} height={16} className={styles.btnIcon} />
-            <span>Log in</span>
-          </Link>
-          <Link href="/get-started" className={`${styles.btn} ${styles.btnGetStarted}`}>
-            <Image src="/icons/yellowPaw.svg" alt="" width={16} height={16} className={styles.btnIcon} />
-            <span>Get Started</span>
-          </Link>
-        </div>
+        {showButtons && (
+          <div className={`${styles.actions} ${!showButtons ? styles.hiddenSpacer : ''}`}>
+            <Link href="/login" className={`${styles.btn} ${styles.btnLogin}`}>
+              <Image src="/icons/yellowPaw.svg" alt="" width={16} height={16} className={styles.btnIcon} />
+              <span>Log in</span>
+            </Link>
+            <Link href="/register" className={`${styles.btn} ${styles.btnGetStarted}`}>
+              <Image src="/icons/yellowPaw.svg" alt="" width={16} height={16} className={styles.btnIcon} />
+              <span>Get Started</span>
+            </Link>
+          </div>
+        )}
 
       </div>
     </header>

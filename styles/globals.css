@@ -1,7 +1,43 @@
+
 @import "tailwindcss";
 
 @theme {
   --font-itim: 'Itim', cursive;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL TYPOGRAPHY UTILITIES (RescueBase Design System)
+--------------------------------------------------------- */
+
+.globalMainTitle {
+  font-family: var(--font-itim), sans-serif;
+  color: #431a04; /* Dark chocolate brown */
+  line-height: 1.1;
+  user-select: none;
+}
+
+.globalSubTitle {
+  font-family: var(--font-karma), serif; 
+  color: #AA2020; /* Elegant brick red accent */
+  letter-spacing: 0.025em;
+}
+
+/* Playful Underline Accent for Titles */
+.globalHighlightText {
+  color: #AA2020;
+  position: relative;
+  display: inline-block;
+}
+
+.globalHighlightText::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 4px;
+  background-color: #431a04;
+  border-radius: 9999px;
 }
 
 :root {
@@ -12,6 +48,7 @@
 
 html {
   min-height: 100%;
+  overflow-y: scroll;
 }
 
 body {

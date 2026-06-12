@@ -1,35 +1,3 @@
-/* General Main Title Styles (Itim Font, Chocolate, Scalable) */
-.mainTitle {
-  font-family: var(--font-itim), sans-serif;
-  color: #431a04; /* Dark chocolate brown */
-  line-height: 1.1;
-  user-select: none;
-}
-
-/* General Subtitle Styles (Karma Font, Elegant Brick Red) */
-.subTitle {
-  font-family: var(--font-karma), serif; /* Cleanly updated to Karma */
-  color: #AA2020; /* Elegant brick red accent */
-  letter-spacing: 0.025em;
-}
-
-/* Playful Underline Accent for Titles */
-.highlightText {
-  color: #AA2020;
-  position: relative;
-  display: inline-block;
-}
-
-.highlightText::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 4px;
-  background-color: #431a04;
-  border-radius: 9999px;
-}
 
 /* ==========================================================================
    RESCUES SHOWCASE SECTION LAYOUT

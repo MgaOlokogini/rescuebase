@@ -20,18 +20,18 @@ export default function CallToActionBanner() {
 
       {/* Center Content Group */}
       <div className={styles.bannerContent}>
-        <h2 className={`mainTitle ${styles.bannerTitle}`}>
+        <h2 className={`globalMainTitle ${styles.bannerTitle}`}>
           From Rescue to Forever <span className="highlightText">Home</span>
         </h2>
         
-        <p className={`subTitle ${styles.bannerSubtitle}`}>
+        <p className={`globalSubTitle ${styles.bannerSubtitle}`}>
           It takes five minutes to take the quiz. <br />
           It takes a lifetime to love them.
         </p>
 
         {/* Call to Action Buttons */}
         <div className={styles.buttonGroup}>
-          <Link href="/quiz" className={styles.primaryButton}>
+          <Link href="/quiz" className={`globalPrimaryButton ${styles.primaryButton}`}>
             <span>Find my Match</span>
             <Image 
               src="/icons/light heart.svg" 
@@ -42,7 +42,7 @@ export default function CallToActionBanner() {
             />
           </Link>
           
-          <Link href="/shelters" className={styles.secondaryButton}>
+          <Link href="/shelters" className={`globalSecondaryButton ${styles.secondaryButton}`}>
             Support a Shelter
           </Link>
         </div>

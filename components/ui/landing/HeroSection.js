@@ -6,11 +6,11 @@ export default function HeroSection() {
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroContent}>    
-        <h1 className={`${styles.mainTitle} ${styles.heroTitle}`}>
+        <h1 className={`globalMainTitle ${styles.heroTitle}`}>
           Find Your <br />
-          Perfect <span className={styles.highlightText}>Match</span>
+          Perfect <span className="globalHighlightText">Match</span>
         </h1>
-        <p className={`${styles.subTitle} ${styles.heroSubtitle}`}>
+        <p className={`globalSubTitle ${styles.heroSubtitle}`}>
           Helping every rescued pet find a loving family faster.
         </p>
         <Link href="/browse" className={styles.heroButton}>

@@ -1,111 +1,208 @@
-.signUpContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-}
+/* styles/Sign-up/SignUp.module.css */
 
-.signUpForm {
+.authPageContainer {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 4rem;
-  background-color: #F9F5EB;
-}
-
-.formHeader {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.mainTitle {
-  font-family: var(--font-itim), sans-serif;
-  color: #431a04;
-  font-size: 3rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.subTitle {
-  font-family: var(--font-karma), serif;
-  color: #A34828;
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.inputGroup {
-  margin-bottom: 1.5rem;
-}
-
-.inputGroup label {
-  display: block;
-  font-family: var(--font-karma), serif;
-  color: #431a04;
-  margin-bottom: 0.5rem;
-}
-
-.inputGroup input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid #431a04;
-  border-radius: 0.5rem;
-  font-family: var(--font-karma), serif;
-  font-size: 1rem;
-}
-
-.primaryButton {
-  width: 100%;
-  background-color: #5A1B00;
-  color: #fff7cb;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.125rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-  font-family: var(--font-itim), sans-serif;
-  border: none;
-  cursor: pointer;
-}
-
-.primaryButton:hover {
-  background-color: #2d1102;
-  transform: translateY(-2px);
-}
-
-.formFooter {
-  text-align: center;
-  margin-top: 2rem;
-  font-family: var(--font-karma), serif;
-}
-
-.formFooter a {
-  color: #AA2020;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.imageContainer {
-  position: relative;
+  background-color: #ffffff;
   overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
 }
 
-.backgroundImage {
-  object-fit: cover;
+/* 🔲 Dual Section Viewport Layout */
+.splitContentWrapper {
+  display: flex;
+  flex-direction: row; 
   width: 100%;
+  flex: 1;
   height: 100%;
 }
 
-@media (max-width: 960px) {
-  .signUpContainer {
-    grid-template-columns: 1fr;
-  }
+.leftVisualSide {
+  width: 38%;
+  /* 🎯 FIX 1: Prevents the image container from shrinking or expanding when the form overlaps it */
+  flex-shrink: 0; 
+  height: 100%;
+  position: relative;
+  background-color: #ffffff;
+  z-index: 1;
+}
 
-  .imageContainer {
+.backgroundImageAsset {
+  object-fit: cover;
+  object-position: bottom left; 
+}
+
+/* 🌟 The Golden Form Card Container Panel */
+.rightFormCardSide {
+  /* 🎯 FIX 2: Instead of 68%, use flex: 1 so it naturally devours ALL remaining screen space 
+     and pull it backward over the image by 6% using a clean layout overlap strategy */
+  flex: 1; 
+  height: 100%;
+  background-color: #FCBF49;
+  border-radius: 80px 0 0 80px; /* Curve sweeps inwards on the LEFT side */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem;
+  
+  /* 🎯 FIX 3: Shift the structural margin and pad the inner box so items don't look squeezed */
+  margin-left: -6%; 
+  padding-left: 6rem; /* Offsets the overlap so the form content stays perfectly centered */
+  z-index: 2;
+}
+
+.backButton {
+  position: absolute;
+  top: 120px;
+  left: 7rem; /* Shifted slightly right to clear the deep curved layout line */
+  color: #431a04;
+  transition: opacity 0.2s ease;
+}
+
+.backButton:hover {
+  opacity: 0.7;
+}
+
+.formContentBox {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formTitle {
+  font-family: var(--font-itim), 'Itim', sans-serif;
+  font-size: 2.25rem;
+  color: #431a04;
+  margin-bottom: 2.5rem;
+}
+
+/* 🔘 Authentication Actions styling */
+.googleAuthButton {
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  background-color: #c4a484;
+  color: #431a04;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.providerIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.dividerContainer {
+  margin: 1.5rem 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.dividerText {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #431a04;
+}
+
+/* ✍️ Standard Minimal Form Formatting */
+.credentialsForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.materialInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #431a04;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #431a04;
+  outline: none;
+}
+
+.materialInput::placeholder {
+  color: #431a04;
+  opacity: 0.7;
+}
+
+.revealPasswordToggle {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  background: transparent;
+  border: none;
+  color: #431a04;
+  cursor: pointer;
+}
+
+.submitActionButton {
+  width: 100%;
+  height: 50px;
+  background-color: #431a04;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.submitActionButton:hover {
+  background-color: #2b1002;
+}
+
+.footerRedirectPrompt {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #431a04;
+}
+
+.redirectLink {
+  color: #aa2020;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redirectLink:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Mobile Form Packing Factor */
+@media (max-width: 900px) {
+  .leftVisualSide {
     display: none;
   }
-
-  .signUpForm {
-    padding: 3rem;
+  .rightFormCardSide {
+    width: 100%;
+    border-radius: 0;
+    padding: 2rem;
+    margin-left: 0;
+  }
+  .backButton {
+    left: 2rem;
   }
 }

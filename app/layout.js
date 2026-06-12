@@ -1,10 +1,16 @@
-import { Itim, Geist, Geist_Mono } from "next/font/google";
+import { Itim, Karma, Geist, Geist_Mono} from "next/font/google";
 import "../styles/globals.css";
 
 const itim = Itim({
   weight: "400", 
   variable: "--font-itim",
   subsets: ["latin"],
+});
+
+const karma = Karma({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-karma',
 });
 
 const geistSans = Geist({
@@ -26,8 +32,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${itim.variable} ${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className={`${itim.variable} ${geistSans.variable} ${geistMono.variable} ${karma.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

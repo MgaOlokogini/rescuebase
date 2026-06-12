@@ -5,8 +5,8 @@ import styles from "@/styles/Landing/Steps.module.css";
 export default function AdoptionSteps() {
   return (
     <section className={styles.stepsSection}>
-      <h2 className={`mainTitle ${styles.stepsTitle}`}>Adoption in three steps</h2>
-      <p className={`${styles.subTitle} ${styles.stepsSubtitle}`}>We've made finding your forever pet as joyful as the moment you meet them.</p>
+      <h2 className={`globalMainTitle ${styles.stepsTitle}`}>Adoption in three steps</h2>
+      <p className={`globalSubTitle ${styles.stepsSubtitle}`}>We've made finding your forever pet as joyful as the moment you meet them.</p>
       
       <div className={styles.stepsGrid}>
         <ProcessCard 

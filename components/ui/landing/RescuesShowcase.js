@@ -7,14 +7,14 @@ export default function RescuesShowcase() {
   return (
     <section className={styles.rescuesSection}>
       <div className={styles.sectionHeader}>
-        <h2 className={`${styles.mainTitle} ${styles.showcaseTitle}`}>Meet some of our rescues</h2>
-        <p className={`${styles.subTitle} ${styles.showcaseSubtitle}`}>Every one of them is waiting for you.</p>
+        <h2 className={`globalMainTitle ${styles.showcaseTitle}`}>Meet some of our rescues</h2>
+        <p className={`globalSubTitle ${styles.showcaseSubtitle}`}>Every one of them is waiting for you.</p>
       </div>
 
       <div className={styles.seeAllWrapper}>
         <Link href="/browse" className={styles.seeAllLink}>
           <span>See All Pets</span>
-          <span className={styles.arrowIcon}>→</span>
+          <span className="globalArrowIcon">→</span>
         </Link>
       </div>
 
@@ -25,7 +25,7 @@ export default function RescuesShowcase() {
       </div>
 
       <div className={styles.ctaContainer}>
-        <p className={styles.ctaPrompt}>Sign in to see all available pets and start your application</p>
+        <p className={`globalSubTitle ${styles.ctaPrompt}`}>Sign in to see all available pets and start your application</p>
         <div className={styles.actionButtonsGroup}>
           <Link href="/register" className={`${styles.ctaButtonBase} ${styles.adoptButton}`}>
             <span>Adopt</span>

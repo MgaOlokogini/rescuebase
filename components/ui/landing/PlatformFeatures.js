@@ -27,10 +27,10 @@ export default function PlatformFeatures() {
 
   return (
     <section className={styles.featuresSection}>
-      <h2 className={styles.featuresMainTitle}>
+      <h2 className={`globalMainTitle ${styles.featuresMainTitle}`}>  
         More than an adoption site
       </h2>
-      <p className={styles.featuresSubtitle}>
+      <p className={`globalSubTitle ${styles.featuresSubtitle}`}>  
         A complete platform for adopters, shelter staff, and managers — all connected.
       </p>
 

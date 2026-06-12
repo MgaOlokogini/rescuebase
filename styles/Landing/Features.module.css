@@ -16,8 +16,6 @@
 
 /* Section Header Title */
 .featuresMainTitle {
-  font-family: var(--font-itim), sans-serif;
-  color: #431a04; /* Deep chocolate brown */
   font-size: 3.5rem;
   font-weight: 500;
   text-align: center;
@@ -25,9 +23,7 @@
 }
 
 /* Section Subtitle Description */
-.featuresSubtitle {
-  font-family: var(--font-karma), serif;
-  color: #A34828; /* Soft terracotta red/accent color */
+.featuresSubtitle { 
   font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
