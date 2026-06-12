@@ -1,6 +1,5 @@
 import { Itim, Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
-import '../styles/Landing/Landing.css';
 
 const itim = Itim({
   weight: "400", 
@@ -27,8 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={itim.variable}>
-      <head />
+    <html lang="en" className={`${itim.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <body>{children}</body>
     </html>
   );

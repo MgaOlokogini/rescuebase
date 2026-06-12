@@ -3,6 +3,28 @@
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
 }
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5A1B00;
+}
+
+.errorMessage {
+  color: #AA2020; 
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
 
 .signInForm {
   display: flex;

@@ -26,7 +26,7 @@ const SignUp = () => {
           <button type="submit" className={styles.primaryButton}>Sign Up</button>
         </form>
         <div className={styles.formFooter}>
-          <p>Already have an account? <Link href="/sign-in">Sign In</Link></p>
+          <p>Already have an account? <Link href="/login">Sign In</Link></p>
         </div>
       </div>
       <div className={styles.imageContainer}>
